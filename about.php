@@ -41,6 +41,8 @@
         <div class="content">
             <h2 class="content-subhead">About Me</h2>
 			<p>Who cares about me, go find your friends.</p>
+
+            <p><a href="https://github.com/NateBrune/AetherPeerDump">If you're looking for the source code, its here</a></p>
         </div>
         </center>
     </div>

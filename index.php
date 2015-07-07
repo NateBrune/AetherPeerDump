@@ -17,18 +17,16 @@
 		$("#ptable").find("tr").each(function(){
 			var $tds = $(this).find("td");
 			if($tds.length == 4){
-				var ip = $tds[1].textContent;
-				var port = $tds[2].textContent;
+				var ip = $tds[1].textContent.replace(/^\s+|\s+$/g, '')
+				var port = $tds[2].textContent.replace(/^\s+|\s+$/g, '')
 				ping("http://" + ip + ":" + port).then(function(ms){
-					$tds[0].innerHTML += " (" + ms + ")"
+					$tds[3].innerHTML = " (" + ms + ")"
 				}).catch(function(e){
-					$tds[0].innerHTML += " (down)"
+					$tds[3].innerHTML = " (down)"
 				})
 			}
-			
-			console.info($tds); //, ip, port);
 		})
-	})
+        })
 </script>
 <link rel="stylesheet" href="css/layouts/side-menu.css">      
 <!--<![endif]-->  </head>  

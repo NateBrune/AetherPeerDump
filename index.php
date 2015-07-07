@@ -5,18 +5,38 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="tableExport.js"></script>
 <script type="text/javascript" src="jquery.base64.js"></script>
+<script type="text/javascript" src="js/promise.js"></script>
+<script type="text/javascript" src="js/ping.js"></script>
 <title>Aether Peer Dump</title>  
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">     
 <!--[if lte IE 8]>          
 <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">      
 <![endif]-->      <!--[if gt IE 8]><!-->          
+<script>
+	$(function(){ // PING
+		$("#ptable").find("tr").each(function(){
+			var $tds = $(this).find("td");
+			if($tds.length == 4){
+				var ip = $tds[1].textContent;
+				var port = $tds[2].textContent;
+				ping("http://" + ip + ":" + port).then(function(ms){
+					$tds[0].innerHTML += " (" + ms + ")"
+				}).catch(function(e){
+					$tds[0].innerHTML += " (down)"
+				})
+			}
+			
+			console.info($tds); //, ip, port);
+		})
+	})
+</script>
 <link rel="stylesheet" href="css/layouts/side-menu.css">      
 <!--<![endif]-->  </head>  
 
 
 <body>  <div id="layout">      <!-- Menu toggle -->      
 <a href="#menu" id="menuLink" class="menu-link">          <!-- Hamburger icon -->          
-<span></span>      </a>        <div id="menu">          <div class="pure-menu">              <a class="pure-menu-heading" href="#">Peer Dump</a>                <ul class="pure-menu-list">                  <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">Home</a></li>                  <li class="pure-menu-item"><a href="addpeer.php" class="pure-menu-link">Add Peer</a></li>                  <li class="pure-menu-item"><a href="about.php" class="pure-menu-link">About</a></li>              </ul>          </div>      </div>        <div id="main">          <div class="header">              <h2 style="cursor:default;">Find your friends!</h2>          </div>          <center>          <div class="content">              <h2 class="content-subhead" style='cursor:default;'>Peers</h2>  			<table class="pure-table" id="ptable">  			    <thead>  			        <tr>  			            <th>Owner</th>  			            <th>Address</th>  			            <th>Port</th>  			            <th>Added (UTC)</th>  			        </tr>  			    </thead>    			    <tbody>  			    	<tr id="blank">
+<span></span>      </a>        <div id="menu">          <div class="pure-menu">              <a class="pure-menu-heading" href="#">Peer Dump</a>                <ul class="pure-menu-list">                  <li class="pure-menu-item"><a href="index.php" class="pure-menu-link">Home</a></li>                  <li class="pure-menu-item"><a href="addpeer.php" class="pure-menu-link">Add Peer</a></li>                  <li class="pure-menu-item"><a href="about.php" class="pure-menu-link">About</a></li>              </ul>          </div>      </div>        <div id="main">          <div class="header">              <h2 style="cursor:default;">Find your friends!</h2>          </div>          <center>          <div class="content">              <h2 class="content-subhead" style='cursor:default;'>Peers</h2>  			<table class="pure-table" id="ptable">  			    <thead>  			        <tr>  			            <th>Owner (ping)</th>  			            <th>Address</th>  			            <th>Port</th>  			            <th>Added (UTC)</th>  			        </tr>  			    </thead>    			    <tbody>  			    	<tr id="blank">
                     </tr>
                     <tr>
                         <td>Grizzly</td>

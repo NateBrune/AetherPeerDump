@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
-    <title>Aether Peer Dump</title>
+<meta name="description" content="A website that hosts peer data for the Aether network">  
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="tableExport.js"></script>
+<script type="text/javascript" src="jquery.base64.js"></script>
+<title>Aether Peer Dump</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
@@ -62,6 +65,7 @@
 			    
 
 			</table>
+            <br /><br /><a class="pure-button pure-button-primary" onClick ="$('#ptable').tableExport({type:'json',escape:'false'});">export</a>
         </div>
         </center>
     </div>

@@ -35,12 +35,12 @@
 
     <div id="main">
         <div class="header">
-            <h2>Find your friends!</h2>
+            <h2 style='cursor:default;'>Find your friends!</h2>
         </div>
         <center>
         <div class="content">
-            <h2 class="content-subhead">About Me</h2>
-			<p>Who cares about me, go find your friends.</p>
+            <h2 class="content-subhead" style='cursor:default;'>About Me</h2>
+			<p style='cursor:default;'>Who cares about me, go find your friends.</p>
 
             <p><a href="https://github.com/NateBrune/AetherPeerDump">If you're looking for the source code, its here</a></p>
         </div>

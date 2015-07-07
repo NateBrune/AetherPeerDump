@@ -50,8 +50,8 @@
                 }
 
                 else{
-                    echo "<h2>Thank you!</h2>";
-                    echo "<h2>You have been added to the list.</h2>";
+                    echo "<h2 style='cursor:default;'>Thank you!</h2>";
+                    echo "<h2 style='cursor:default;'>You have been added to the list.</h2>";
                     fclose($fp);
                     $html = file_get_html('index.php');
                     $ptable = $html->find('tr[id=blank]', 0);
@@ -70,13 +70,13 @@
                 
             }
             else{
-                echo "<h2>Find your friends!</h2>";
+                echo "<h2 style='cursor:default;'>Find your friends!</h2>";
             }
             ?>   
         </div>
         <center>
         <div class="content">
-            <h2 class="content-subhead">Submit new peer</h2>
+            <h2 class="content-subhead" style='cursor:default;'>Submit new peer</h2>
             <form action="addpeer.php" method="post" class="pure-form">
                 <fieldset class="pure-group">
                     <input name="alias" id="alias" type="text" class="pure-input-1-2" placeholder="Owner's Alias">

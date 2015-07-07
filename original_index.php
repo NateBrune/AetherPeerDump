@@ -35,11 +35,11 @@
 
     <div id="main">
         <div class="header">
-            <h2>Find your friends!</h2>
+            <h2 style="cursor:default;">Find your friends!</h2>
         </div>
         <center>
         <div class="content">
-            <h2 class="content-subhead">Peers</h2>
+            <h2 class="content-subhead" style='cursor:default;'>Peers</h2>
 			<table class="pure-table" id="ptable">
 			    <thead>
 			        <tr>

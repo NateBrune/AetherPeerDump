@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+        body {
+		background-image:url('img/upfeathers.png');
+	}
+</style>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
@@ -53,7 +58,7 @@
                     echo "<h2 style='cursor:default;'>Thank you!</h2>";
                     echo "<h2 style='cursor:default;'>You have been added to the list.</h2>";
                     fclose($fp);
-                    $html = file_get_html('index.php');
+                    $html = file_get_html('index.php', $use_include_path = false, $context=null, $offset = -1, $maxLen=-1, $lowercase = true, $forceTagsClosed=true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN=false, $defaultBRText=DEFAULT_BR_TEXT);
                     $ptable = $html->find('tr[id=blank]', 0);
                     $ptable->innertext='
                     </tr>

@@ -39,7 +39,7 @@ $(window).load(function() {
     
     setTimeout(function() {
         $('tr').not('#blank').not(':first').each(function (index, element) {
-          if (/\(down\)/i.test($(element).text()) == true || /\//.test($(element).text()) == true) {
+          if (/down/i.test($(element).text()) == true || /\//.test($(element).text()) == true) {
             $($(element).children()[3]).css('color', 'rgba(231, 76, 60,1.0)');
             offline.push(element);
             $(element).remove();

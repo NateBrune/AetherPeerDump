@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+        body {
+		background-image:url('img/upfeathers.png');
+	}
+</style>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">

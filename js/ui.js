@@ -33,3 +33,23 @@
     };
 
 }(this, this.document));
+
+$(window).load(function() {
+    var offline = [];
+    
+    setTimeout(function() {
+        $('tr').not('#blank').not(':first').each(function (index, element) {
+          if (/\(down\)/i.test($(element).text()) == true || /\//.test($(element).text()) == true) {
+            $($(element).children()[3]).css('color', 'rgba(231, 76, 60,1.0)');
+            offline.push(element);
+            $(element).remove();
+          } else {
+            $($(element).children()[3]).css('font-weight', 'bold').css('color', 'rgba(46, 204, 113,1.0)');
+          }
+        });
+        
+        $(offline).each(function (index, element) {
+          $('tr').last().after(element);
+        });
+    }, 5000);
+});

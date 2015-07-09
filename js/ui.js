@@ -34,7 +34,7 @@
 
 }(this, this.document));
 
-$(window).load(function() {
+$(document).ready(function() {
     var offline = [];
     
     setTimeout(function() {
